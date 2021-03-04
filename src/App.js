@@ -1,25 +1,14 @@
-import React, {useState, useCallback} from 'react';
 import {
-  Layout,
-  Page,
-  FooterHelp,
-  Card,
-  Link,
-  Button,
-  FormLayout,
-  TextField,
-  AccountConnection,
-  ChoiceList,
-  SettingToggle,
-  EmptyState,
+  Page
 } from '@shopify/polaris';
-import {ImportMinor} from '@shopify/polaris-icons';
-import { ResourcePicker, TitleBar } from '@shopify/app-bridge-react';
+import React, { useCallback, useState } from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Products from './components/Products';
 
 const App = () => {
   const [open, setOpen] = useState(false);
 
-  const primaryAction = {content: 'Select product'};
+  const primaryAction = { content: 'Select product' };
 
   const toggleOpenResourcePicker = useCallback(
     () => {
@@ -38,27 +27,9 @@ const App = () => {
   );
 
   return (
-    <Page>
-       <TitleBar
-          title="Onlive"
-        />
-        <ResourcePicker
-          resourceType="Product"
-          showVariants={false}
-          open={open}
-          onSelection={(resources) => handleSelection(resources)}
-          onCancel={() => setOpen(false)}
-        />
-      <EmptyState
-          heading="Add your products to Onlive channel"
-          action={{
-            content: 'Select products',
-            onAction: () => toggleOpenResourcePicker(),
-          }}
-        >
-          <p>Select products.</p>
-        </EmptyState>
-      </Page>
+    <>
+      <Redirect to="/products" />
+    </>
   );
 }
 
