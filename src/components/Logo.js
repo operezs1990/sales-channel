@@ -1,11 +1,11 @@
 // import { Auth } from 'aws-amplify';
 import { withStyles } from '@material-ui/core';
-import { connect } from 'react-redux';
 import compose from 'recompose/compose';
 import { bindActionCreators } from 'redux';
-
 import { getOrganization } from '../reducers/organizationSlice';
-import sidebarStyles from '../styles/Sidebar.styles';
+import logoStyles from './styles/Logo.styles';
+
+
 
 const Sidebar = ({ classes, organization, onClick }) => {
 
@@ -26,6 +26,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 export default compose(
-    withStyles(sidebarStyles),
-    connect(mapStateToProps, mapDispatchToProps)
+    withStyles(logoStyles),
+    // connect(mapStateToProps, mapDispatchToProps)
 )(Sidebar);
