@@ -3,6 +3,7 @@ import { bindActionCreators } from '@reduxjs/toolkit';
 import {
   Button,
   Card,
+  DisplayText,
   IndexTable,
   Page,
   TextStyle,
@@ -14,7 +15,7 @@ import compose from 'recompose/compose';
 import { fetchProductsAction, getProducts, getProductsError, getProductsPending } from '../reducers/productSlice';
 import productsStyles from './styles/Products.styles';
 
-const Products = ({ classes, fetchProducts,  }) => {
+const Products = ({ classes, fetchProducts, }) => {
 
   // useEffect(() => {
   //   fetchProducts();
@@ -74,6 +75,9 @@ const Products = ({ classes, fetchProducts,  }) => {
 
   return (
     <Page>
+      <div className={classes.header}>
+        <DisplayText size="large">Manage the products of your sales channel</DisplayText>
+      </div>
       <Card sectioned>
         <div className={classes.submitButton} >
           <Button primary onClick={handleSubmit} >Push Products</Button>
@@ -113,5 +117,5 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 export default compose(
   withStyles(productsStyles),
-  //connect(mapStateToProps, mapDispatchToProps)
+  connect(mapStateToProps, mapDispatchToProps)
 )(Products);

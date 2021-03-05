@@ -4,6 +4,8 @@ import {
 import React, { useCallback, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Products from './components/Products';
+import { Provider } from 'react-redux';
+import store from './store';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -30,6 +32,7 @@ const App = () => {
     <>
       <Redirect to="/products" />
     </>
+
   );
 }
 
