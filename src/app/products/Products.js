@@ -12,7 +12,7 @@ import {
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
-import { fetchProductsAction, getProducts, getProductsError, getProductsPending } from '../reducers/productSlice';
+import { fetchProductsAction, getProducts, getProductsError, getProductsPending } from '../../reducers/productSlice';
 import productsStyles from './styles/Products.styles';
 
 const Products = ({ classes, fetchProducts, }) => {

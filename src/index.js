@@ -1,18 +1,19 @@
+import { Provider as ShopifyProvider } from '@shopify/app-bridge-react';
+import { AppProvider } from '@shopify/polaris';
+import '@shopify/polaris/dist/styles.css';
+import enTranslations from '@shopify/polaris/locales/en.json';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {AppProvider} from '@shopify/polaris';
-import enTranslations from '@shopify/polaris/locales/en.json';
-import '@shopify/polaris/dist/styles.css';
-import {Provider as ShopifyProvider, Loading} from '@shopify/app-bridge-react';
-
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import LinkWrapper from './components/Link'
-import Routes from './routes';
-import { BrowserRouter } from 'react-router-dom';
-import store from './store';
 import { Provider as ReduxProvider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import LinkWrapper from './app/Link';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import Routes from './routes';
+import store from './store';
+
+
 
 const config = { apiKey: '82fd034f42500193055a4ff648def6ed', shopOrigin: 'orlandoshopstore.myshopify.com/', forceRedirect: true };
 

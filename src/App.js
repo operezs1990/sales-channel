@@ -1,11 +1,6 @@
-import {
-  Page
-} from '@shopify/polaris';
 import React, { useCallback, useState } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import Products from './components/Products';
-import { Provider } from 'react-redux';
-import store from './store';
+import { Redirect } from 'react-router-dom';
+import Main from './views/Main';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -30,7 +25,7 @@ const App = () => {
 
   return (
     <>
-      <Redirect to="/products" />
+      <Main/>
     </>
 
   );

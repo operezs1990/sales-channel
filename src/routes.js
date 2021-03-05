@@ -1,9 +1,10 @@
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { ClientRouter, RoutePropagator } from '@shopify/app-bridge-react';
+import Account from './app/account/Account';
 
-import Account from './components/Account';
-import Products from './components/Products';
+
+
 
 const Routes = (props) => {
   const { history, location } = props;
@@ -13,9 +14,9 @@ const Routes = (props) => {
       <ClientRouter history={history} />
       <RoutePropagator location={location} />
       <Switch>
-        <Route path="/products">
+        {/* <Route path="/products">
           <Products />
-        </Route>
+        </Route> */}
         <Route path="/account">
           <Account />
         </Route>

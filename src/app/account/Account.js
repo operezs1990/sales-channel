@@ -1,20 +1,13 @@
-import React, {useState, useCallback} from 'react';
+import { withStyles } from '@material-ui/core';
 import {
-  Layout,
-  Page,
-  FooterHelp,
-  Card,
-  Link,
-  Button,
-  FormLayout,
-  TextField,
-  AccountConnection,
-  ChoiceList,
-  SettingToggle,
+  AccountConnection, FooterHelp, Layout,
+  Link, Page
 } from '@shopify/polaris';
-import {ImportMinor} from '@shopify/polaris-icons';
+import React, { useCallback, useState } from 'react';
+import compose from 'recompose/compose';
+import accountStyles from './styles/Account.styles';
 
-const Account = () => {
+const Account = ({classes}) => {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const [email, setEmail] = useState('');
@@ -111,4 +104,18 @@ const DisconnectAccount = ({onAction}) => {
   );
 }
 
-export default Account;
+// const mapStateToProps = (state) => ({
+//   error: getProductsError(state),
+//   products: getProducts(state),
+//   pending: getProductsPending(state),
+// })
+
+// const mapDispatchToProps = dispatch => bindActionCreators({
+//   fetchProducts: fetchProductsAction
+// }, dispatch)
+
+
+export default compose(
+  withStyles(accountStyles),
+  // connect(mapStateToProps, mapDispatchToProps)
+)(Account);
