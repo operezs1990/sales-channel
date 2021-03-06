@@ -20,12 +20,12 @@ const config = { apiKey: '82fd034f42500193055a4ff648def6ed', shopOrigin: 'orland
 ReactDOM.render(
   <ShopifyProvider config={config}>
     <ReduxProvider store={store}>
-    <BrowserRouter>
-      <AppProvider i18n={enTranslations} linkComponent={LinkWrapper}>
-        <Routes />
-        <App />
-      </AppProvider>
-    </BrowserRouter>
+      <BrowserRouter>
+        <AppProvider i18n={enTranslations} linkComponent={LinkWrapper}>
+          {/* <Routes /> */}
+          <App />
+        </AppProvider>
+      </BrowserRouter>
     </ReduxProvider>,
   </ShopifyProvider>,
   document.getElementById('root')

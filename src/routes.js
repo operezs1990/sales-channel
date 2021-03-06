@@ -1,9 +1,8 @@
 import React from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { ClientRouter, RoutePropagator } from '@shopify/app-bridge-react';
 import Account from './app/account/Account';
-
-
+import Products from './app/products/Products';
 
 
 const Routes = (props) => {
@@ -14,13 +13,24 @@ const Routes = (props) => {
       <ClientRouter history={history} />
       <RoutePropagator location={location} />
       <Switch>
-        {/* <Route path="/products">
-          <Products />
-        </Route> */}
+
         <Route path="/account">
           <Account />
         </Route>
+        <Route path="/products">
+          <Products />
+        </Route>
+        <Route
+          exact
+          path="*"
+          render={() => {
+            return (
+                <Redirect to="/account" />
+            )
+          }}
+        />
       </Switch>
+      
     </>
   );
 };

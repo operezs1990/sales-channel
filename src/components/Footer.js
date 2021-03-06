@@ -1,11 +1,24 @@
+import { withStyles } from "@material-ui/core";
+import { FooterHelp, Link } from "@shopify/polaris";
+import compose from "recompose/compose";
+import footerStyles from './styles/Footer.styles';
 
-const Footer = () => {
+const Footer = ({classes}) => {
 
     return (
-        <div className="footer">
-            <span>Onlive 2020 &copy; All rights reserved.</span>
-        </div>
+
+            <FooterHelp>
+                All rights reserved{' '}
+                <Link url="https://help.shopify.com/manual/orders/fulfill-orders">
+                    Onlive{' '}
+                </Link>
+            2021
+        </FooterHelp>
+
     );
 }
 
-export default Footer;
+export default compose(
+    withStyles(footerStyles),
+    //  connect(mapStateToProps, mapDispatchToProps)
+)(Footer);

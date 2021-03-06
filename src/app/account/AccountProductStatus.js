@@ -14,7 +14,7 @@ const AccountProductStatus = ({ classes }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(selectedResources);
+    console.log('selectedResources');
   };
 
   return (
